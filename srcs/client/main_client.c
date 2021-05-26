@@ -6,7 +6,7 @@
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 21:21:41 by tmatis            #+#    #+#             */
-/*   Updated: 2021/05/26 23:41:25 by tmatis           ###   ########.fr       */
+/*   Updated: 2021/05/26 23:48:42 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	sig_handler(int sig_n)
 	g_confirm = 1;
 }
 
-t_bool is_atoiable(char *str)
+t_bool	is_atoiable(char *str)
 {
 	if (*str != '-' && *str != '+' && !ft_isnum(*str))
 		return (false);
@@ -43,7 +43,7 @@ t_bool is_atoiable(char *str)
 
 void	encode(pid_t pid, char *str)
 {
-	char 	c;
+	char	c;
 	int		bin;
 	int		char_size;
 	int		i;
@@ -72,8 +72,8 @@ void	encode(pid_t pid, char *str)
 
 char	*build_string(char *str)
 {
-	char *pid_string;
-	char *dest;
+	char	*pid_string;
+	char	*dest;
 
 	pid_string = ft_itoa(getpid());
 	if (!pid_string)
@@ -109,7 +109,6 @@ int	main(int argc, char **argv)
 			ft_putstr_fd("\033[1;32m[OK]\033[0m\n", STDOUT_FILENO);
 		else
 			ft_putstr_fd("\033[1;31m[KO]\033[0m\n", STDOUT_FILENO);
-
 	}
 	else
 	{

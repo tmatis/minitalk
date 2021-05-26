@@ -6,7 +6,7 @@
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 21:25:09 by tmatis            #+#    #+#             */
-/*   Updated: 2021/05/26 21:25:48 by tmatis           ###   ########.fr       */
+/*   Updated: 2021/05/26 23:48:03 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 # define MINITALK_H
 
-#include "../libft/libft.h"
+# include "../libft/libft.h"
 
 #endif

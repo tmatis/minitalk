@@ -6,7 +6,7 @@
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 21:20:44 by tmatis            #+#    #+#             */
-/*   Updated: 2021/05/26 23:30:41 by tmatis           ###   ########.fr       */
+/*   Updated: 2021/05/26 23:49:24 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	add_string(int buff_size, char buff[10], char **string)
 
 t_bool	buffer_manager(char c, char **string)
 {
-	static char buff[10];
+	static char	buff[10];
 	static int	buff_size = 0;
 
 	buff[buff_size++] = c;
@@ -75,7 +75,7 @@ void	decoder(int sig_no)
 {
 	static char	char_build = 0;
 	static int	char_size = 0;
-	static char *string = NULL;
+	static char	*string = NULL;
 
 	char_build = char_build << 1;
 	if (sig_no == SIGUSR2)
