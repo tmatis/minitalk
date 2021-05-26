@@ -6,7 +6,7 @@
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 21:21:41 by tmatis            #+#    #+#             */
-/*   Updated: 2021/05/27 00:01:16 by tmatis           ###   ########.fr       */
+/*   Updated: 2021/05/27 00:03:30 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	encode(pid_t pid, char *str)
 		char_size = 0;
 		while (char_size < 8)
 		{
-			usleep(200);
+			usleep(500);
 			bin = c & 0b10000000;
 			c = c << 1;
 			char_size++;
