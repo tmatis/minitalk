@@ -6,7 +6,7 @@
 #    By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/08 16:38:19 by tmatis            #+#    #+#              #
-#    Updated: 2021/05/26 23:38:50 by tmatis           ###   ########.fr        #
+#    Updated: 2021/05/26 23:51:03 by tmatis           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -121,4 +121,6 @@ fclean:		header clean
 
 re:			fclean all
 
-.PHONY:		all clean fclean re libft header
+bonus:		all
+
+.PHONY:		all clean fclean re libft header bonus
