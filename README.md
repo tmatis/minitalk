@@ -1,0 +1,2 @@
+# minitalk
+Communication through signal
