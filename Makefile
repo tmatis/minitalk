@@ -6,7 +6,7 @@
 #    By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/08 16:38:19 by tmatis            #+#    #+#              #
-#    Updated: 2021/05/26 21:24:17 by tmatis           ###   ########.fr        #
+#    Updated: 2021/05/26 23:38:50 by tmatis           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,9 +17,9 @@
 
 NAME	= minitalk
 CC 		= clang
-CFLAGS	= -Wall -Werror -Wextra -g
+CFLAGS	= -Wall -Werror -Wextra
 LIBFT	= libft/libft.a
-AUTHOR	= tmatis && jmazoyer
+AUTHOR	= tmatis
 DATE	= 26/05/2021
 
 ################################################################################
@@ -115,21 +115,10 @@ clean:		header
 			@printf "%-53b%b" "$(COM_COLOR)clean:" "$(OK_COLOR)$(OK_STRING)$(NO_COLOR)\n"
 
 fclean:		header clean
-			@rm -rf client server ./test ./malloc_check
+			@rm -rf client server
 			@make -sC ./libft fclean
 			@printf "%-53b%b" "$(COM_COLOR)fclean:" "$(OK_COLOR)$(OK_STRING)$(NO_COLOR)\n"
 
 re:			fclean all
 
-check:		all
-			@cd tests; bash test.sh
-
-check_protect:
-			@cd tests; bash malloc_test.sh
-
-malloc_test:	$(LIBFT) ${OBJS} ${OBJ_MAIN}
-				@$(call run_and_test,$(CC) $(CFLAGS) -fsanitize=undefined -o $@ ${OBJS} ${OBJ_MAIN} -L./libft -lft -L./tests/malloc_fail -lfail)
-
-
-
-.PHONY:		all clean fclean re libft header check malloc_check
+.PHONY:		all clean fclean re libft header

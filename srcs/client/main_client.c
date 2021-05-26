@@ -6,7 +6,7 @@
 /*   By: tmatis <tmatis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 21:21:41 by tmatis            #+#    #+#             */
-/*   Updated: 2021/05/26 23:32:47 by tmatis           ###   ########.fr       */
+/*   Updated: 2021/05/26 23:41:25 by tmatis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,12 @@
 #include <unistd.h>
 #include <sys/types.h>
 
+int		g_confirm = 0;
+
 void	sig_handler(int sig_n)
 {
 	(void)sig_n;
+	g_confirm = 1;
 }
 
 t_bool is_atoiable(char *str)
@@ -101,8 +104,12 @@ int	main(int argc, char **argv)
 		encode(ft_atoi(argv[1]), send_string);
 		free(send_string);
 		ft_putstr_fd("Wait for confirmation: ", STDOUT_FILENO);
-		pause();
-		ft_putstr_fd("\033[1;32m[OK]\033[0m\n", STDOUT_FILENO);
+		sleep(1);
+		if (g_confirm)
+			ft_putstr_fd("\033[1;32m[OK]\033[0m\n", STDOUT_FILENO);
+		else
+			ft_putstr_fd("\033[1;31m[KO]\033[0m\n", STDOUT_FILENO);
+
 	}
 	else
 	{
