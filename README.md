@@ -2,6 +2,9 @@
 The purpose of this project is to code a small data exchange program using
 UNIX signals.
 
+#temps de travail
+3 heures
+
 #encode
 ```c
 void	encode(pid_t pid, char *str)
