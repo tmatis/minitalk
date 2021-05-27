@@ -2,10 +2,10 @@
 The purpose of this project is to code a small data exchange program using
 UNIX signals.
 
-#temps de travail
+# temps de travail
 3 heures
 
-#encode
+# encode
 ```c
 void	encode(pid_t pid, char *str)
 {
@@ -37,7 +37,7 @@ void	encode(pid_t pid, char *str)
 }
 ```
 
-#decode
+# decode
 ```c
 void	decoder(int sig_no) // call a chaque signal
 {
