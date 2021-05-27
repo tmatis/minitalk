@@ -18,16 +18,16 @@ void	encode(pid_t pid, char *str)
 	{
 		c = str[i];
 		char_size = 0;
-		while (char_size < 8)
+		while (char_size < 8) // on fais l'operation sur chaque bit du char (8-bit)
 		{
 			usleep(200);
-			bin = c & 0b10000000;
-			c = c << 1;
+			bin = c & 0b10000000; // on met le premier bit dans bin
+			c = c << 1; // on decale les bit de c de 1 vers la droite 01010000 -> 1010000
 			char_size++;
 			if (bin)
-				kill(pid, SIGUSR2);
+				kill(pid, SIGUSR2); // si bit fort (1)
 			else
-				kill(pid, SIGUSR1);
+				kill(pid, SIGUSR1); // si bit faible (0)
 		}
 		i++;
 	}
@@ -42,7 +42,7 @@ static char	char_build = 0;
 
 	char_build = char_build << 1;
 	if (sig_no == SIGUSR2)
-		char_build = char_build | 0b00000001;
+		char_build = char_build | 0b00000001; // si bit fort on applique le masque donc on set le dernier bit a 1
 	char_size++;
 	if (char_size == 8)
 	{
