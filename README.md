@@ -24,7 +24,7 @@ void	encode(pid_t pid, char *str)
 		while (char_size < 8) // on fais l'operation sur chaque bit du char (8-bit)
 		{
 			usleep(200);
-			bin = c & 0b10000000; // on met le premier bit dans bin
+			bin = c & 0b10000000; // on met le premier bit dans bin donc 0b1000000 = 0b1010000 & 0b1000000
 			c = c << 1; // on decale les bit de c de 1 vers la droite 01010000 -> 1010000
 			char_size++;
 			if (bin)
