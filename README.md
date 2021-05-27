@@ -36,7 +36,9 @@ void	encode(pid_t pid, char *str)
 
 #decode
 ```c
-static char	char_build = 0;
+void	decoder(int sig_no) // call a chaque signal
+{
+	static char	char_build = 0;
 	static int	char_size = 0;
 	static char	*string = NULL;
 
@@ -49,4 +51,5 @@ static char	char_build = 0;
 		char_size = 0;
 		//char_build is the char
 	}
+}
 ```
